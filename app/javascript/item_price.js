@@ -4,8 +4,7 @@ const priceInput = document.getElementById("item-price");
 
 priceInput.addEventListener("input", () => {
   const inputValue = priceInput.value;
-  console.log(inputValue);
-
+  
   // 販売手数料の計算
   const fee = Math.floor(inputValue * 0.1);
 
