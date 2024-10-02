@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_index, only: [:edit, :update]
    
 
@@ -22,17 +22,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit  
-    @item = Item.find(params[:id])
   end
 
   def update
-    # @item に対応する商品を見つける
-    @item = Item.find(params[:id])
-
     # 商品情報を更新し、成功した場合と失敗した場合の処理
     if @item.update(item_params)
     # 更新に成功した場合は、商品詳細ページにリダイレクトし、通知を表示
