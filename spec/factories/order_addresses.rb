@@ -1,8 +1,6 @@
 FactoryBot.define do
   factory :order_address do
     token {"tok_abcdefghijk00000000000000000"}
-    association :user  
-    association :item 
     postal_code { '123-4567' }
     prefecture_id { rand(1..47) } # 1から47のランダムな都道府県ID
     city { '東京都' }
